@@ -1,0 +1,79 @@
+<div class="ai-prompt-container">
+  <header class="header">
+    <h1>Groq AI Prompt</h1>
+    <div class="subtitle">Trợ lý ảo AI</div>
+  </header>
+
+  <div class="prompt-section">
+    <div class="prompt-label">Nhập câu hỏi của bạn:</div>
+    <textarea [(ngModel)]="prompt" rows="5"
+      placeholder="Ví dụ: Giải thích khái niệm về học máy bằng ngôn ngữ đơn giản..." [disabled]="loading"></textarea>
+
+    <div class="action-container">
+      <button (click)="sendPrompt()" [disabled]="loading || !prompt" class="send-button">
+        <span *ngIf="!loading">Gửi câu hỏi</span>
+        <span *ngIf="loading" class="loader-text">
+          <span class="dot-animation">Đang xử lý</span>
+        </span>
+      </button>
+      <button *ngIf="resultHtml" (click)="clearResults()" class="clear-button">
+        Xóa kết quả
+      </button>
+    </div>
+
+    <div *ngIf="error" class="error-message">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2">
+        <circle cx="12" cy="12" r="10"></circle>
+        <line x1="12" y1="8" x2="12" y2="12"></line>
+        <line x1="12" y1="16" x2="12" y2="16"></line>
+      </svg>
+      <span>{{ error }}</span>
+    </div>
+  </div>
+
+  <div *ngIf="resultHtml" class="result-section">
+    <div class="result-header">
+      <h2>Kết quả</h2>
+      <div class="result-actions">
+        <button (click)="saveVocabulary()" class="action-button" [disabled]="loading">
+          <span *ngIf="!loading">Lưu vào database</span>
+          <span *ngIf="loading" class="loader-text">Đang lưu...</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="result-content">
+      <div class="html-result" [innerHTML]="vocabularyHtml || 'Chưa có kết quả'"></div>
+
+      <div class="tabs">
+        <button [class.active]="activeTab === 'preview'" (click)="activeTab = 'preview'">
+          Xem trước
+        </button>
+        <button [class.active]="activeTab === 'markdown'" (click)="pickSecretWord()">
+          Lấy ra các từ quan trọng và chuyển sang tiếng Anh
+        </button>
+      </div>
+
+      <div *ngIf="activeTab === 'markdown'">
+        <div class="vocabulary-sections">
+          <div class="vocabulary-section">
+            <h3>Danh sách từ quan trọng (tiếng Việt)</h3>
+            <pre *ngIf="wordsJson">{{ wordsJson | json }}</pre>
+            <p *ngIf="!wordsJson">Chưa có dữ liệu từ quan trọng</p>
+          </div>
+          
+          <div class="vocabulary-section">
+            <h3>Danh sách từ vựng (tiếng Việt - tiếng Anh)</h3>
+            <pre *ngIf="enJson">{{ enJson | json }}</pre>
+            <p *ngIf="!enJson">Chưa có dữ liệu từ vựng</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div>Powered by Groq</div>
+  </footer>
+</div>

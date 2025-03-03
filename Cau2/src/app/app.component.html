@@ -1,0 +1,64 @@
+<div class="container">
+  <div class="header">
+    <h1>Sinh file SSML từ hội thoại</h1>
+    <p class="subtitle">Tạo file SSML từ đoạn hội thoại giữa hai người nói</p>
+  </div>
+  
+  <div class="card">
+    <div class="voice-selection">
+      <h2>Chọn giọng nói</h2>
+      
+      <div class="voice-option">
+        <div class="voice-label">
+          <div class="speaker-badge">A</div>
+          <label>Giọng cho người nói A:</label>
+        </div>
+        <div class="voice-controls">
+          <select [(ngModel)]="selectedVoiceA" class="voice-select">
+            <option *ngFor="let voice of voices" [value]="voice">{{ voice }}</option>
+          </select>
+        </div>
+      </div>
+      
+      <div class="voice-option">
+        <div class="voice-label">
+          <div class="speaker-badge">B</div>
+          <label>Giọng cho người nói B:</label>
+        </div>
+        <div class="voice-controls">
+          <select [(ngModel)]="selectedVoiceB" class="voice-select">
+            <option *ngFor="let voice of voices" [value]="voice">{{ voice }}</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    
+    <div class="conversation-preview">
+      <h2>Xem trước hội thoại</h2>
+      <div class="conversation">
+        <div *ngFor="let line of conversation" class="conversation-line" [ngClass]="{'speaker-a': line.speaker === 'A', 'speaker-b': line.speaker === 'B'}">
+          <div class="speaker-badge">{{ line.speaker }}</div>
+          <div class="message">{{ line.text }}</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="actions">
+      <button (click)="generateSSML()" class="generate-btn">
+        <i class="fa fa-code"></i> Tạo SSML
+      </button>
+    </div>
+  </div>
+  
+  <div *ngIf="showResult" class="card result-card">
+    <h2>Kết quả SSML</h2>
+    <div class="result-content">
+      <pre class="ssml-code">{{ text }}</pre>
+    </div>
+    <div class="actions">
+      <button (click)="downloadSSML()" class="download-btn">
+        <i class="fa fa-download"></i> Tải xuống file SSML
+      </button>
+    </div>
+  </div>
+</div>
