@@ -19,20 +19,20 @@ Xây dựng ứng dụng web Golang dùng Iris framework có một ô text area 
 ## Cách chạy
 - Sử dụng VScode
 - Vào mục Backend tạo file .env rồi thêm GROQ_API_KEY = "your api key"
-![Demo](https://drive.google.com/file/d/1XuK_6qiUKDxcrHjtetmqxt3MsHeBy1ol/view?usp=drive_link)
-![Demo](https://drive.google.com/file/d/1zJplVuNzMSi7GibvRKRYZGCu1TOEj2hO/view?usp=drive_link)
+![Demo](./Image/1.png)
+![Demo](./Image/6.png)
 - Bật terminal thự mục rồi gõ: 
-    + ![Demo](https://drive.google.com/file/d/1X6mTs66FKuK0wkvG-ZqfCw15yxvl3N_T/view?usp=drive_link)
+    + ![Demo](./Image/2.png)
     + go mod init project, để giúp quản lý dependencies (thư viện, package) cho dự án
     + go run main.go, để chạy dự án
 
 - Vào mục Frontend mở terminal rồi gõ:
-    + ![Demo](https://drive.google.com/file/d/18JSI68pU2XsSESGDuMYT-0ugFNEyYYAv/view?usp=drive_link)
+    + ![Demo](./Image/4.png)
     + Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process, để cấp quyền nếu bạn dùng window
     + ng serve, để chạy dự án 
 
 - Vào mạng truy cập http://localhost:4200/ để test 
-![Demo](https://drive.google.com/file/d/1iIrVyKYksDd0Jctj2yM4b2rovjjSSove/view?usp=drive_link)
+![Demo](./Image/3.png)
 
 # Tên Dự Án 
 Dự án 2
@@ -43,12 +43,12 @@ Xây dựng ứng dụng web sinh file SSML từ hội thoại
 ## Cách chạy
 - Sử dụng VScode
 - Vào mục Frontend mở terminal rồi gõ:
-    + ![Demo](https://drive.google.com/file/d/18JSI68pU2XsSESGDuMYT-0ugFNEyYYAv/view?usp=drive_link)
+    + ![Demo](./Image/4.png)
     + Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process, để cấp quyền nếu bạn dùng window
     + ng serve, để chạy dự án 
 
 - Vào mạng truy cập http://localhost:4200/ để test 
-![Demo](https://drive.google.com/file/d/14Ymx15dSv48ia4gArzlXez0-YjTpQ7lR/view?usp=drive_link)
+![Demo](./Image/5.png)
 
 # Tên Dự Án 
 Dự án 3
@@ -59,19 +59,19 @@ lập trình một ứng dụng web dùng Iris framework gọi vào Groq API, mo
 ## Cách chạy
 - Sử dụng VScode
 - Vào mục Backend tạo file .env rồi thêm GROQ_API_KEY = "your api key"
-![Demo](https://drive.google.com/file/d/1XuK_6qiUKDxcrHjtetmqxt3MsHeBy1ol/view?usp=drive_link)
-![Demo](https://drive.google.com/file/d/1zJplVuNzMSi7GibvRKRYZGCu1TOEj2hO/view?usp=drive_link)
+![Demo](./Image/1.png)
+![Demo](./Image/6.png)
 - Vào mục Backend/Postgresql/db.go để sửa user="tên người dùng" password="mật khẩu" dbname="Tên database" theo database ở Postgresql
-![Demo](https://drive.google.com/file/d/1h3c6lS71sVT2UtP1UVb5x8R_U77SQGCl/view?usp=drive_link)
+![Demo](./Image/7.png)
 - Bật terminal thự mục rồi gõ: 
     + go mod init project, để giúp quản lý dependencies (thư viện, package) cho dự án
     + go run main.go, để chạy dự án
 
 - Vào mục Frontend mở terminal rồi gõ:
-    + ![Demo](https://drive.google.com/file/d/18JSI68pU2XsSESGDuMYT-0ugFNEyYYAv/view?usp=drive_link)
+    + ![Demo](./Image/4.png)
     + Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process, để cấp quyền nếu bạn dùng window
     + ng serve, để chạy dự án 
 
 - Vào mạng truy cập http://localhost:4200/ để test 
-![Demo](https://drive.google.com/file/d/112B2w6uYFfXog2KhhcTMOgMoZwhA3HtI/view?usp=drive_link)
-![Demo](https://drive.google.com/file/d/1pembpEDZC4DTmdznX6vNuoriEpGRXrAw/view?usp=drive_link)
+![Demo](./Image/8.png)
+![Demo](./Image/9.png)
